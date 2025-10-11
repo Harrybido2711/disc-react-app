@@ -15,7 +15,7 @@ function App() {
   const students = [
     { id: 1, name: "Lucas", major: "ISP", interest: "Singing, Research", img: lucasPhoto },
     { id: 2, name: "Charles", major: "LOC", interest: "Do magic, Startups", img: CharlesPhoto },
-    { id: 3, name: "Eric", major: "Applied Mathematics", interest: "Sexy girls", img: EricPhoto},
+    { id: 3, name: "Eric", major: "Applied Mathematics", interest: "Music", img: EricPhoto},
 
   ]; // basic info of students
   useEffect(() => {
