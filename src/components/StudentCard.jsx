@@ -13,5 +13,4 @@ function StudentCard({student, isFavorite, onToggleFavorite }) {
     </div>
   );
 }
-
 export default StudentCard;

@@ -36,29 +36,74 @@ html, body, #root {
 
 /* ====== BUTTONS ====== */
 button {
-  border: none;
+  all: unset;
+  display: inline-block;
   padding: 0.6rem 1.2rem;
-  background-color: #8b5cf6; 
-  color: white;
+  background-color: #d9c8ff !important;
+  color: #2e1a47 !important;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.25s, transform 0.1s;
+  box-shadow: 0 2px 4px rgba(78, 42, 132, 0.15);
 }
 
 button:hover {
-  background-color: #7c3aed; 
+  background-color: #7c3aed !important;
+  transform: scale(1.03);
 }
 
 .App.dark button {
-  background-color: #a78bfa; 
+  background-color: #5b21b6;
+  color: #ede9fe;
 }
 
 .App.dark button:hover {
-  background-color: #c4b5fd;
+  background-color: #7c3aed;
 }
 
+/* Dark Mode button */
+.App.dark button {
+  background-color: #5b21b6; /* deep lavender */
+  color: #ede9fe; /* light text */
+}
 
+.App.dark button:hover {
+  background-color: #7c3aed;
+}
+/* Navigation Button*/
+.nav-btn {
+  text-decoration: none;
+  background-color: #d9c8ff;
+  color: #2e1a47;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(78, 42, 132, 0.15);
+  transition: background-color 0.25s, transform 0.1s, color 0.25s;
+}
+
+.nav-btn:hover {
+  background-color: #c4b5fd;
+  transform: scale(1.03);
+}
+
+/* Dark mode */
+.App.dark .nav-btn {
+  background-color: #5b21b6;
+  color: #ede9fe;
+}
+
+.App.dark .nav-btn:hover {
+  background-color: #7c3aed;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+/*student gallery & student cards */
 .student-gallery {
   display: flex;
   justify-content: center;
@@ -104,4 +149,48 @@ h2 {
 
 .App.dark h2 {
   color: #c4b5fd;
+}
+/* ===== USERS PAGE ===== */
+.user-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 3rem;   
+  column-gap: 3rem; 
+  padding: 0 2rem;
+  margin-top: 3rem;
+}
+.users-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.user-card {
+  width: 230px;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(78, 42, 132, 0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.user-card img {
+  width: 100%;           
+  height: 180px;         
+  object-fit: cover;     
+  border-radius: 10px;   
+  margin-bottom: 0.8rem; 
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(78, 42, 132, 0.25);
+}
+
+.App.dark .user-card {
+  background-color: #3b275a;
+  color: #ede9fe;
 }
