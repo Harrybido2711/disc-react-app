@@ -5,10 +5,12 @@ export default function Users() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const res = await fetch("https://disc-assignment-5-users-api-iyct.onrender.com/api/users");
+        const res = await fetch(`${apiUrl}/users`);
         const data = await res.json();
         setUsers(data);
       } catch (err) {
@@ -18,16 +20,16 @@ export default function Users() {
       }
     }
     fetchUsers();
-  }, []);
+  }, [apiUrl]);
 
   const filteredUsers = users.filter(
     (u) =>
-      u.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      u.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      u.major.toLowerCase().includes(searchTerm.toLowerCase())
+      u.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      u.major.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      u.interest.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) return <p className="loading-text">Loading NU students...</p>;
+  if (loading) return <p>Loading students...</p>;
 
   return (
     <div className="users-page">
@@ -45,14 +47,13 @@ export default function Users() {
       <div className="user-gallery">
         {filteredUsers.map((u) => (
           <div key={u.id} className="user-card">
-            <img src={u.profilePicture} alt={u.firstName} />
-            <h3>{u.firstName} {u.lastName}</h3>
+            <h3>{u.name}</h3>
             <p><b>Major:</b> {u.major}</p>
-            <p><b>Bio:</b> {u.bio}</p>
-            <p><i>Class of {u.graduationYear || "—"}</i></p>
+            <p><b>Interest:</b> {u.interest}</p>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
