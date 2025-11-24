@@ -1,5 +1,5 @@
 import { students } from "../data/students.js";
-import StudentCard from "../components/StudentCard";
+import StudentCard from "../components/StudentCard.jsx";
 export default function Home({ favorites, toggleFavorite }) {
   return (
     <div className="home-page">

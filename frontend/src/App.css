@@ -194,3 +194,65 @@ h2 {
   background-color: #3b275a;
   color: #ede9fe;
 }
+.auth-page a {
+  color: #8b5cf6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-page a:hover {
+  text-decoration: underline;
+}
+
+.App.dark .auth-page a {
+  color: #c4b5fd;
+}
+
+/*Auth Form*/
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 280px;
+}
+
+.auth-form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #d9c8ff;
+  background-color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: #8b5cf6;
+}
+
+.App.dark .auth-form input {
+  background-color: #3b275a;
+  border-color: #6b46c1;
+  color: #ede9fe;
+}
+/* ===== AUTH PAGES (Login & Signup) ===== */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.auth-page h2 {
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+}
+
+.App.dark .auth-page h2 {
+  color: #c4b5fd;
+}
+.mode-btn {
+  margin-left: auto;   /* ⭐ 把按钮推到最右 */
+}
